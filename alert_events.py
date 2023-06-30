@@ -20,7 +20,7 @@ class AlertEvents:
         for alert_event in alert_events:
             if "login" in alert_event:
                 self.alert_events.append(alert_event)
-                logging.info("Alert event: %s", alert_event)
+                logging.warning("Alert event: %s", alert_event)
         return self.alert_events
 
     def alert_ips(self, alert_events):
@@ -28,7 +28,7 @@ class AlertEvents:
         for ip in self.alert_ip_list:
             if ip in alert_events:
                 self.alert_ip_events.append(ip)
-                logging.info("Alert event: %s", ip)
+                logging.warning("Alert event: %s", ip)
         return self.alert_ip_events
 
 
